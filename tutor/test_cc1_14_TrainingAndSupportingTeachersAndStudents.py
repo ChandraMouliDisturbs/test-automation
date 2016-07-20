@@ -1,4 +1,9 @@
-"""Concept Coach v1, Epic 14 - Training and Supporting Teachers and Students."""
+"""
+Concept Coach v1, Epic 14.
+
+Training and Supporting Teachers and Students.
+
+"""
 
 import inspect
 import json
@@ -24,14 +29,14 @@ basic_test_env = json.dumps([{
 BROWSERS = json.loads(os.getenv('BROWSERS', basic_test_env))
 TESTS = os.getenv(
     'CASELIST',
-    str([7704, 7705, 7706, 7707,7708,
+    str([7704, 7705, 7706, 7707, 7708,
          7709, 7710, 7711, 7712, 7713,
          7714])  # NOQA
 )
 
 
 @PastaDecorator.on_platforms(BROWSERS)
-class TestEpicName(unittest.TestCase):
+class TestTrainingAndSupportingTeachersAndStudents(unittest.TestCase):
     """CC1.14 - Training and Supporting Teachers and Students."""
 
     def setUp(self):
@@ -53,12 +58,12 @@ class TestEpicName(unittest.TestCase):
         except:
             pass
 
-    # Case C7704 - 001 - System | Concept Coach Zendesk is web-accessible
+    # Case C7704 - 001 - System | Concept Coach Help Center is web-accessible
     @pytest.mark.skipif(str(7704) not in TESTS, reason='Excluded')  # NOQA
-    def test_usertype_story_text(self):
-        """Concept Coach Zendesk is web-accesible.
+    def test_system_concept_coach_help_center_is_web_accessible_7704(self):
+        """Concept Coach Help Center is web-accesible.
 
-        Steps: 
+        Steps:
 
         Log in to tutor as teacher
         If more then one course, click on a concept coach course
@@ -67,7 +72,7 @@ class TestEpicName(unittest.TestCase):
 
         Expected Result:
 
-        In a new window or tab, zendesk help is opened
+        In a new window or tab, CC Help Center is opened
 
         """
         self.ps.test_updates['name'] = 'cc1.14.001' \
@@ -84,13 +89,12 @@ class TestEpicName(unittest.TestCase):
 
         self.ps.test_updates['passed'] = True
 
-
     # Case C7705 - 002 - Teacher | Can access user support
     @pytest.mark.skipif(str(7705) not in TESTS, reason='Excluded')  # NOQA
-    def test_usertype_story_text(self):
+    def test_usertype_teacher_can_access_user_support_7705(self):
         """Can access user support.
 
-        Steps: 
+        Steps:
 
         click on the user menu
         Click on the Get Help option
@@ -98,7 +102,7 @@ class TestEpicName(unittest.TestCase):
 
         Expected Result:
 
-        in a new tab or window https://openstaxcc.zendesk.com/hc/en-us is opened
+        in a new tab or window CC Help Center is opened
 
         """
         self.ps.test_updates['name'] = 'cc1.14.002' \
@@ -115,13 +119,12 @@ class TestEpicName(unittest.TestCase):
 
         self.ps.test_updates['passed'] = True
 
-
     # Case C7706 - 003 - Student | Can access user support
     @pytest.mark.skipif(str(7706) not in TESTS, reason='Excluded')  # NOQA
-    def test_usertype_story_text(self):
+    def test_student_can_access_user_support_7706(self):
         """Can access user support.
 
-        Steps: 
+        Steps:
 
         click on the user menu
         Click on the Get Help option
@@ -129,7 +132,7 @@ class TestEpicName(unittest.TestCase):
 
         Expected Result:
 
-        in a new tab or window https://openstaxcc.zendesk.com/hc/en-us is opened
+        in a new tab or window CC Help Center is opened
 
         """
         self.ps.test_updates['name'] = 'cc1.14.003' \
@@ -146,13 +149,12 @@ class TestEpicName(unittest.TestCase):
 
         self.ps.test_updates['passed'] = True
 
-
     # Case C7707 - 004 - Non-user | Submit support questions
     @pytest.mark.skipif(str(7707) not in TESTS, reason='Excluded')  # NOQA
-    def test_usertype_story_text(self):
+    def test_nonuser_submit_support_questions_7707(self):
         """Submit support questions.
 
-        Steps: 
+        Steps:
 
         go to http://cc.openstax.org
         click on the help button in the bottom right
@@ -182,23 +184,22 @@ class TestEpicName(unittest.TestCase):
 
         self.ps.test_updates['passed'] = True
 
-
     # Case C7708 - 005 - Teacher | Submit support questions
     @pytest.mark.skipif(str(7708) not in TESTS, reason='Excluded')  # NOQA
-    def test_usertype_story_text(self):
+    def test_teacher_submit_support_questions_7708(self):
         """Submit support questions.
 
-        Steps: 
+        Steps:
 
-        Go to https://tutor-staging.openstax.org/
+        Go to https://tutor-qa.openstax.org/
         Click on the 'Login' button
-        Enter the teacher user account [ teacher05 | password ] in the username and password text boxes
+        Enter the teacher user account in the username and password text boxes
         Click on the 'Sign in' button
         If user has more than one course, click on a Concept Coach course
 
         Click the user menu in the right corner of the header
-        Click "Get Help" 
-        Click "Submit a request" 
+        Click "Get Help"
+        Click "Submit a request"
         Fill out all the necessary text fields
         Click "Submit"
 
@@ -228,7 +229,7 @@ class TestEpicName(unittest.TestCase):
     def test_usertype_story_text(self):
         """Submit support questions.
 
-        Steps: 
+        Steps:
 
         Go to https://tutor-staging.openstax.org/
         Click on the 'Login' button
@@ -236,8 +237,8 @@ class TestEpicName(unittest.TestCase):
         Click on the 'Sign in' button
 
         Click the user menu in the right corner of the header
-        Click "Get Help" 
-        Click "Submit a request" 
+        Click "Get Help"
+        Click "Submit a request"
         Fill out all the necessary text fields
         Click "Submit"
 
@@ -265,14 +266,14 @@ class TestEpicName(unittest.TestCase):
     # Case C7710 - 007 - Teacher | View instructions on how to use Concept Coach
     @pytest.mark.skipif(str(7710) not in TESTS, reason='Excluded')  # NOQA
     def test_usertype_story_text(self):
-        """View instructions on how to use Concept Coach. 
+        """View instructions on how to use Concept Coach.
 
-        Steps: 
+        Steps:
 
-        
+
         Expected Result:
 
-        
+
 
         """
         raise NotImplementedError(inspect.currentframe().f_code.co_name)
@@ -281,14 +282,14 @@ class TestEpicName(unittest.TestCase):
     # Case C7711 - 008 - Student | View instructions on how to use Concept Coach
     @pytest.mark.skipif(str(7711) not in TESTS, reason='Excluded')  # NOQA
     def test_usertype_story_text(self):
-        """View instructions on how to use Concept Coach. 
+        """View instructions on how to use Concept Coach.
 
-        Steps: 
+        Steps:
 
-        
+
         Expected Result:
 
-        
+
 
         """
         raise NotImplementedError(inspect.currentframe().f_code.co_name)
@@ -297,9 +298,9 @@ class TestEpicName(unittest.TestCase):
     # Case C7712 - 009 - Teacher | View instructions on how to use Concept Coach
     @pytest.mark.skipif(str(7712) not in TESTS, reason='Excluded')  # NOQA
     def test_usertype_story_text(self):
-        """View instructions on how to use Concept Coach. 
+        """View instructions on how to use Concept Coach.
 
-        Steps: 
+        Steps:
 
         Click the user menu in the right corner of the header
         Click "Get Help"
@@ -316,14 +317,14 @@ class TestEpicName(unittest.TestCase):
     # Case C7713 - 010 - Student | Get help during account registration
     @pytest.mark.skipif(str(7713) not in TESTS, reason='Excluded')  # NOQA
     def test_usertype_story_text(self):
-        """View instructions on how to use Concept Coach. 
+        """View instructions on how to use Concept Coach.
 
-        Steps: 
+        Steps:
 
-        
+
         Expected Result:
 
-        
+
 
         """
         raise NotImplementedError(inspect.currentframe().f_code.co_name)
@@ -334,9 +335,9 @@ class TestEpicName(unittest.TestCase):
     def test_usertype_story_text(self):
         """View instructions for Legacy users transitioning to Concept Coach
 
-        Steps: 
+        Steps:
 
-        
+
         Expected Result:
 
 
